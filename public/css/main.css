@@ -1,0 +1,14 @@
+/*! my css */
+
+* {
+	scroll-behavior: smooth;
+}
+#top {
+	z-index: 100000
+}
+.typedjs {
+  display: inline;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,76 @@
+{
+  "short_name": "Wgyt",
+  "name": "Wgyt",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/images/logo.webp",
+      "type": "image/webp",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "/images/mask.png",
+      "sizes": "1861x1861",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "background_color": "#7f1d1d",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#7f1d1d",
+  "description": "Wgyt's official app.",
+  "url": "https://staging.wgyt.tk",
+  "lang": "English",
+  "orientation": "landscape-primary",
+  "categories": ["wgyt", "blog", "developer"],
+  "shortcuts":[
+    {
+      "name": "Home",
+      "short_name": "Home",
+      "url": "/",
+      "icons": [
+        { "src": "/images/logo.png", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "About",
+      "short_name": "About",
+      "url": "/about",
+      "icons": [
+        { "src": "/images/logo.png", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "url": "/blog",
+      "icons": [
+        { "src": "/images/logo.png", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Scratch",
+      "short_name": "Scratch",
+      "url": "/scratch",
+      "icons": [
+        { "src": "/images/logo.png", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio",
+      "url": "/portfolio",
+      "icons": [
+        { "src": "/images/logo.png", "type": "image/png" }
+      ]
+    }
+  ],
+  "related_applications":[],
+  "prefer_related_applications":false
+}

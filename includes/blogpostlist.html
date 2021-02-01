@@ -1,0 +1,37 @@
+<script src="https://unpkg.com/vue@next"></script>
+
+<div class="h-full bg-black mx-auto" id="blog">
+	<br>
+		<h1 class="font-bold text-3xl text-white text-center">Blog Posts</h1>
+		<br>
+
+    <div v-for="counter of counter"class="xs:w-full md:w-1/2 px-2 xs:mb-6 mb-12 bg-white rounded-xl w-full mx-auto">
+			<a :href="'/blog/' + counter.data.url" class="flex transition-shadow duration-150 ease-in-out shadow-sm focus:shadow hover:shadow-md xxlmax:flex-col bg-white rounded-xl">
+				<div class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full bg-white text-black">
+					<h2 class="font-bold">{{ counter.data.title}}</h2> 
+					<p>by {{ counter.data.author}}</p>
+					<p class="font-bold text-sm">{{counter.data.description}}</p>
+				</div>
+			</a>
+		</div>
+
+		<br>
+	</div>
+  <script>
+const Blog = {
+  data() {
+    return {
+      counter: []
+    }
+  },
+async created(){      
+  await fetch('/api/blog')
+      .then(response => response.json())
+      
+      .then(data => {this.counter = data})
+    }
+
+}
+
+Vue.createApp(Blog).mount('#blog')
+</script>
