@@ -1,16 +1,15 @@
 <script src="https://unpkg.com/vue@next">
 </script>
 
-<div class="h-full mx-auto bg-white dark:bg-black" id="blog">
+<div class="h-full mx-auto bg-white dark:bg-black" id="NPM">
 	<br>
-		<h1 class="font-bold text-3xl text-black dark:text-white text-center">Blog Posts</h1>
-		<h2 class="onesignal-customlink-container font-bold text-3xl text-black dark:text-white text-center"></h2>
+		<h1 class="font-bold text-3xl text-black dark:text-white text-center">NPM Packages</h1>
 		<ul class="grid grid-flow-col shadow-2xl">
       <li v-for="counter of counter">
-			<div class="transition-all duration-150 flex w-full px-4 py-6"   v-if="counter.data">
+			<div class="transition-all duration-150 flex w-full px-4 py-6 md:w-1/2 lg:w-1/3"   v-if="counter.data">
 					<div
 						class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl" 
-					><a :href="'/blog/'+counter.data.url">
+					><a :href="'/NPM/'+counter.data.url">
 						<div class="md:flex-shrink-0">
 							<img
 								:src="counter.data.image"
@@ -19,9 +18,9 @@
 						</div>
 						<hr class="border-gray-300" />
 						<div class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto">
-							<a class="hover:underline" :href="'/blog/'+counter.data.url">
+							<a class="hover:underline" :href="'/NPM/'+counter.data.url">
 								<h2 class="text-2xl font-bold tracking-normal font-semibold text-gray-700 hover:underline"
-                :href="'/blog/'+counter.data.url">
+                :href="'/NPM/'+counter.data.url">
 									{{counter.data?.title}}
 								</h2>
 							</a>
@@ -55,7 +54,7 @@
       </li>
 		</ul>
 </div>  <script>
-const Blog = {
+const NPM = {
   data() {
     return {
       counter: []
@@ -69,7 +68,7 @@ const Blog = {
   },
 
 async created(){      
-  await fetch('/api/blog')
+  await fetch('/api/NPM')
       .then(response => response.json())
       .then(data => {this.counter = data})
       console.log(this.counter)
@@ -77,5 +76,5 @@ async created(){
 
 }
 
-Vue.createApp(Blog).mount('#blog')
+Vue.createApp(NPM).mount('#NPM')
 </script>

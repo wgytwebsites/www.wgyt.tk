@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /api/blog
+
+Sitemap: https://www.wgyt.tk/sitemap.xml

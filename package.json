@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.2.3",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "express-sitemap-html": "^1.2.3",
+    "express-sitemap-xml": "^3.0.0",
     "gray-matter": "^4.0.2",
     "node-fetch": "^2.6.1",
+    "node_cloudflare": "0.0.4",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "remarked": "^0.1.4",
@@ -17,7 +21,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind:build": "postcss public/css/main.css -o public/css/tailwind.css"
+    "tailwind:build": "postcss public/css/main.css -o public/css/tailwind.css",
+    "start": "node index.js && postcss public/css/main.css -o public/css/tailwind.css"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="text-white bg-red-900 antialiased">
+<html lang="en" class="bg-white dark:bg-black">
   <head>
 <%- include('../includes/head.html', {title: `${data.data.title}`,description:`${data.data.description} - Blog`}); %>
 </head>
@@ -12,13 +12,12 @@
   <article class="prose mx-auto ">
       <h1><%- data.data.title %>  </h1>
       <p>By: <%- data.data.author %> </p>
-      <p>Published: <%- data.data.date %> </p>
+      <p>Published: <%- data.data.formattedDate %> </p>
     <br>
   <%- md %>  
     <br>
   </article>
     <iframe class="w-full h-60" src="https://social.wgyt.tk/comments/embed/<%- data.data.url %>"></iframe>
-
   </div>
 	<!-- BLOG -->
 <%- include('../includes/blogpostlist.html'); %>

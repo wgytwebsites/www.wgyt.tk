@@ -1,5 +1,11 @@
 /*! my css */
+::-webkit-scrollbar{
+  width: 0px;
+}
 
+::-webkit-scrollbar-thumb{
+  width: 0px;
+}
 * {
 	scroll-behavior: smooth;
 }

@@ -1,17 +1,18 @@
 <!-- FOOTER -->
+<button class="rounded-full bg-red-900 fixed bottom-0 right-0 h-16 w-16" id="toggle"><svg id="light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
+  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+</svg><svg id="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
+  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+</svg></button>
+
 <footer class="bg-blue-900" id="bottom">
 	<div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-left">
 		<div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
 			<div class="text-xs uppercase text-white font-medium mb-6">Pages</div> <a href="/" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700 nuxt-link-exact-active nuxt-link-active"
 			 aria-current="page">
 				Home
-			</a> <a href="/about" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700 nuxt-link-exact-active nuxt-link-active"
-			 aria-current="page">
-				About
 			</a> <a href="/blog" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700">
 				Blog
-			</a> <a href="/scratch" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700">
-				Scratch
 			</a> <a href="/portfolio" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700">
 				Portfolio
 			</a>
@@ -20,8 +21,6 @@
 			<div class="text-xs uppercase text-white font-medium mb-6">Me on the web</div>
 			<a href="https://github.com/wgyt" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700">
 				GitHub
-			</a><a href="https://github.com/wgytwebsites/" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700">
-				Website Source Code
 			</a><a href="http://scratch.org/users/-william27-" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700">
 				Scratch
 			</a><a href="https://twitter.com/wgyt2120" class="my-3 block text-white hover:text-gray-100 text-sm font-medium duration-700">
@@ -40,6 +39,44 @@
 			<div class="mt-2">© Copyright 2021 William Horning. All Rights Reserved.</div>
 		</div>
 	</div>
+  <script defer>
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+  document.getElementById("light").style.display = "none";
+  document.getElementById("dark").style.display = "block";
+;
+
+} else {
+  document.documentElement.classList.remove('dark')
+    document.getElementById("light").style.display = "block";
+  document.getElementById("dark").style.display = "none";
+;
+
+}
+const toggle = () => {
+  if (localStorage.theme == 'dark') {
+// Whenever the user explicitly chooses light mode
+  localStorage.theme = 'light'
+  document.documentElement.classList.remove('dark')
+    document.getElementById("light").style.display = "block";
+  document.getElementById("dark").style.display = "none";
+
+
+} else {
+// Whenever the user explicitly chooses dark mode
+  localStorage.theme = 'dark'
+  document.documentElement.classList.add('dark')
+  document.getElementById("light").style.display = "none";
+  document.getElementById("dark").style.display = "block";
+
+
+}
+}
+
+document.getElementById("toggle").addEventListener("click", toggle);
+// Whenever the user explicitly chooses to respect the OS preference
+</script>
 </footer>
 <script src="/js/main.js">
 </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fece00312c024f979c888667fa0bb584"}'></script><!-- End Cloudflare Web Analytics -->
