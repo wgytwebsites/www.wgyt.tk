@@ -8,8 +8,6 @@ const fetch = require('node-fetch')
 var cf = require('node_cloudflare');
 let postcss = require('postcss')
 
-
-
 async function getUrls() {
 	let array = ['/', 'blog', 'about', 'scratch', 'portfolio']
 	files = fs.readdirSync("./blog/")
